@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Twin Personality Quiz</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2d3748;
+        }
+        
+        .container {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        
+        .question-container {
+            margin-bottom: 20px;
+        }
+        
+        .options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 600px) {
+            .options {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .option {
+            background-color: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        }
+        
+        .protection-focused { border-color: #3B82F6; }
+        .protection-focused:hover { background-color: #EBF5FF; }
+        
+        .expression-focused { border-color: #8B5CF6; }
+        .expression-focused:hover { background-color: #F3E8FF; }
+        
+        .connection-focused { border-color: #10B981; }
+        .connection-focused:hover { background-color: #ECFDF5; }
+        
+        .exploration-focused { border-color: #F59E0B; }
+        .exploration-focused:hover { background-color: #FFFBEB; }
+        
+        .result {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .result-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid;
+        }
+        
+        .result-icon {
+            font-size: 2.5rem;
+            margin-right: 15px;
+        }
+        
+        .protection-result .result-header { border-color: #3B82F6; }
+        .expression-result .result-header { border-color: #8B5CF6; }
+        .connection-result .result-header { border-color: #10B981; }
+        .exploration-result .result-header { border-color: #F59E0B; }
+        
+        .result-section {
+            margin-bottom: 15px;
+        }
+        
+        .result-section h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .reset-button {
+            background-color: #4B5563;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .reset-button:hover {
+            background-color: #374151;
+        }
+        
+        ul {
+            margin-top: 5px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>What Kind of Digital Twin Would Suit Your Personality?</h1>
+        
+        <div id="quiz">
+            <div class="question-container">
+                <h2>What's your primary concern when creating digital representations of yourself?</h2>
+                <div class="options">
+                    <div class="option protection-focused" onclick="showResult('protection')">
+                        <h3>Security & Privacy</h3>
+                        <p>I want to control who sees what and protect my personal information.</p>
+                    </div>
+                    <div class="option expression-focused" onclick="showResult('expression')">
+                        <h3>Self-expression & Creativity</h3>
+                        <p>I want to express different aspects of myself and create unique digital personas.</p>
+                    </div>
+                    <div class="option connection-focused" onclick="showResult('connection')">
+                        <h3>Building Genuine Relationships</h3>
+                        <p>I want to connect authentically with others and maintain meaningful digital relationships.</p>
+                    </div>
+                    <div class="option exploration-focused" onclick="showResult('exploration')">
+                        <h3>Experiencing Different Perspectives</h3>
+                        <p>I want to explore different identities and understand diverse viewpoints.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Protection-Focused Result -->
+        <div id="protection-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🛡️</div>
+                <h2>Protection-Focused (Privacy Guardian)</h2>
+            </div>
+            
+            <div class="result-section">
+                <h3>Primary concern:</h3>
+                <p>Security and privacy</p>
+            </div>
+            
+            <div class="result-section">
+                <h3>Digital behavior patterns:</h3>
+                <ul>
+                    <li>Minimal sharing of personal information</li>
+                    <li>Strong boundaries between platforms</li>
+                    <li>Regular privacy audits</li>
+                    <li>Selective digital presence</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Ideal Personal Digital Twin features:</h3>
+                <ul>
+                    <li>Strong encryption and security protocols</li>
+                    <li>Minimal data collection and retention</li>
+                    <li>Automatic privacy settings optimization</li>
+                    <li>Digital footprint monitoring</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Risks to watch for:</h3>
+                <ul>
+                    <li>Digital isolation</li>
+                    <li>Missing opportunities for connection</li>
+                    <li>Overly restrictive self-presentation</li>
+                    <li>Security fatigue leading to lapses</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Recommendations:</h3>
+                <ul>
+                    <li>Create tiered privacy protocols allowing selective vulnerability</li>
+                    <li>Schedule regular "safe sharing" experiences</li>
+                    <li>Develop a privacy-first, not privacy-only approach</li>
+                    <li>Use privacy tools that don't compromise user experience</li>
+                </ul>
+            </div>
+            
+            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
+        </div>
+        
+        <!-- Expression-Focused Result -->
+        <div id="expression-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">🎨</div>
+                <h2>Expression-Focused (Creative Experimenter)</h2>
+            </div>
+            
+            <div class="result-section">
+                <h3>Primary concern:</h3>
+                <p>Self-expression and creativity</p>
+            </div>
+            
+            <div class="result-section">
+                <h3>Digital behavior patterns:</h3>
+                <ul>
+                    <li>Frequent identity play and experimentation</li>
+                    <li>Artistic and varied sharing</li>
+                    <li>Platform-specific personas</li>
+                    <li>Curated aesthetic experiences</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Ideal Personal Digital Twin features:</h3>
+                <ul>
+                    <li>Creative tools and filters</li>
+                    <li>Multiple representation options</li>
+                    <li>Cross-platform aesthetic consistency tools</li>
+                    <li>Content creation assistance</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Risks to watch for:</h3>
+                <ul>
+                    <li>Identity fragmentation across platforms</li>
+                    <li>Authenticity challenges</li>
+                    <li>Creative burnout from maintaining personas</li>
+                    <li>Lost sense of core identity</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Recommendations:</h3>
+                <ul>
+                    <li>Create integration rituals between different digital expressions</li>
+                    <li>Maintain a private archive of your digital evolution</li>
+                    <li>Schedule "authentic self" check-ins</li>
+                    <li>Develop a core aesthetic that threads through all expressions</li>
+                </ul>
+            </div>
+            
+            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
+        </div>
+        
+        <!-- Connection-Focused Result -->
+        <div id="connection-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">🤝</div>
+                <h2>Connection-Focused (Authentic Networker)</h2>
+            </div>
+            
+            <div class="result-section">
+                <h3>Primary concern:</h3>
+                <p>Building genuine relationships</p>
+            </div>
+            
+            <div class="result-section">
+                <h3>Digital behavior patterns:</h3>
+                <ul>
+                    <li>Consistent identity across platforms</li>
+                    <li>Relationship-building focus</li>
+                    <li>Regular engagement with connections</li>
+                    <li>Authentic sharing</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Ideal Personal Digital Twin features:</h3>
+                <ul>
+                    <li>Smart filtering for meaningful connections</li>
+                    <li>Consistency tools across platforms</li>
+                    <li>Engagement tracking and reminders</li>
+                    <li>Relationship management assistance</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Risks to watch for:</h3>
+                <ul>
+                    <li>Oversharing personal information</li>
+                    <li>Boundary issues with connections</li>
+                    <li>Digital relationship burnout</li>
+                    <li>Disappointment from online/offline mismatches</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Recommendations:</h3>
+                <ul>
+                    <li>Schedule regular digital boundaries assessment</li>
+                    <li>Create tiered sharing protocols for different relationships</li>
+                    <li>Practice intentional engagement rather than constant availability</li>
+                    <li>Balance digital and physical relationship nurturing</li>
+                </ul>
+            </div>
+            
+            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
+        </div>
+        
+        <!-- Exploration-Focused Result -->
+        <div id="exploration-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🧭</div>
+                <h2>Exploration-Focused (Identity Tourist)</h2>
+            </div>
+            
+            <div class="result-section">
+                <h3>Primary concern:</h3>
+                <p>Experiencing different perspectives</p>
+            </div>
+            
+            <div class="result-section">
+                <h3>Digital behavior patterns:</h3>
+                <ul>
+                    <li>Adopting varied personas for different contexts</li>
+                    <li>Frequent platform-jumping</li>
+                    <li>Interest-based community participation</li>
+                    <li>Role-playing and identity experimentation</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Ideal Personal Digital Twin features:</h3>
+                <ul>
+                    <li>Identity management tools</li>
+                    <li>Containment boundaries between identities</li>
+                    <li>Interest profile synchronization</li>
+                    <li>Cultural and perspective-broadening suggestions</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Risks to watch for:</h3>
+                <ul>
+                    <li>Decision paralysis from too many options</li>
+                    <li>Losing sense of core self</li>
+                    <li>Credibility issues across contexts</li>
+                    <li>Difficulty maintaining meaningful connections</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Recommendations:</h3>
+                <ul>
+                    <li>Maintain a "home base" identity to return to</li>
+                    <li>Keep a private journal of identity explorations and insights</li>
+                    <li>Set clear purposes for each digital identity</li>
+                    <li>Create rituals for transitioning between digital personas</li>
+                </ul>
+            </div>
+            
+            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
+        </div>
+    </div>
+
+    <script>
+        function showResult(type) {
+            // Hide the quiz
+            document.getElementById('quiz').style.display = 'none';
+            
+            // Hide all results
+            const results = document.getElementsByClassName('result');
+            for (let i = 0; i < results.length; i++) {
+                results[i].style.display = 'none';
+            }
+            
+            // Show the selected result
+            document.getElementById(type + '-result').style.display = 'block';
+            
+            // Scroll to the top of the result
+            window.scrollTo(0, 0);
+        }
+        
+        function resetQuiz() {
+            // Show the quiz
+            document.getElementById('quiz').style.display = 'block';
+            
+            // Hide all results
+            const results = document.getElementsByClassName('result');
+            for (let i = 0; i < results.length; i++) {
+                results[i].style.display = 'none';
+            }
+            
+            // Scroll to the top
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
