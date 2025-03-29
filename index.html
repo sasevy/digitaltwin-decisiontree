@@ -317,7 +317,53 @@
             </div>
         </div>
         
-        <!-- Add more branching paths for protection subtypes -->
+        <!-- Protection-Connection Path -->
+        <div id="q3a2" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3a2', 'q2a')">← Back</button>
+            <h2>How do you manage different social circles online?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('social-filter')">
+                    <h3>Strictly separated</h3>
+                    <p>I keep different social circles completely separate online</p>
+                </div>
+                <div class="option" onclick="calculateResult('contextual-sharer')">
+                    <h3>Contextually filtered</h3>
+                    <p>I share different content with different groups based on relationship</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Protection-Expression Path -->
+        <div id="q3a3" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3a3', 'q2a')">← Back</button>
+            <h2>How do you approach creative ownership online?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('rights-defender')">
+                    <h3>Fiercely protective</h3>
+                    <p>I use watermarks, copyright notices, and limited sharing settings</p>
+                </div>
+                <div class="option" onclick="calculateResult('conscious-creator')">
+                    <h3>Selectively open</h3>
+                    <p>I share openly but am mindful about what work I put where</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Protection-Exploration Path -->
+        <div id="q3a4" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3a4', 'q2a')">← Back</button>
+            <h2>How do you explore sensitive or controversial topics online?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('anonymous-explorer')">
+                    <h3>Completely anonymously</h3>
+                    <p>I use different accounts, private browsing, and security tools</p>
+                </div>
+                <div class="option" onclick="calculateResult('cautious-learner')">
+                    <h3>Carefully curated</h3>
+                    <p>I research deliberately through trusted sources without much interaction</p>
+                </div>
+            </div>
+        </div>
         
         <!-- Expression Path Questions -->
         <div id="q2b" class="question-container" style="display: none;">
@@ -343,7 +389,69 @@
             </div>
         </div>
         
-        <!-- Add more branching paths for expression subtypes -->
+        <!-- Expression Path Branches -->
+        <div id="q3b1" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3b1', 'q2b')">← Back</button>
+            <h2>How important is audience feedback to your creative expression?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('artistic-chameleon')">
+                    <h3>I create for myself</h3>
+                    <p>Audience reaction is secondary to my personal creative satisfaction</p>
+                </div>
+                <div class="option" onclick="calculateResult('audience-aware-creator')">
+                    <h3>I value engagement</h3>
+                    <p>Feedback shapes my future creative directions and choices</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Expression-Connection Path -->
+        <div id="q3b2" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3b2', 'q2b')">← Back</button>
+            <h2>How do you balance your creative voice with audience expectations?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('community-creator')">
+                    <h3>Community-focused</h3>
+                    <p>I create content that resonates with specific communities I care about</p>
+                </div>
+                <div class="option" onclick="calculateResult('authentic-influencer')">
+                    <h3>Authentically influential</h3>
+                    <p>I stay true to my voice while being mindful of how it affects others</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Expression-Protection Path -->
+        <div id="q3b3" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3b3', 'q2b')">← Back</button>
+            <h2>How do you protect your creative work online?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('selective-artist')">
+                    <h3>Carefully curated sharing</h3>
+                    <p>I only share selected work in spaces where I feel safe and in control</p>
+                </div>
+                <div class="option" onclick="calculateResult('strategic-creator')">
+                    <h3>Strategic visibility</h3>
+                    <p>I use watermarks, limited resolution, and specific platforms for different work</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Expression-Exploration Path -->
+        <div id="q3b4" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3b4', 'q2b')">← Back</button>
+            <h2>What drives your creative evolution online?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('creative-explorer')">
+                    <h3>Constant experimentation</h3>
+                    <p>I regularly try new styles, mediums, and approaches to keep growing</p>
+                </div>
+                <div class="option" onclick="calculateResult('trend-adapter')">
+                    <h3>Cultural resonance</h3>
+                    <p>I evolve my style based on emerging trends and cultural movements</p>
+                </div>
+            </div>
+        </div>
         
         <!-- Connection Path Questions -->
         <div id="q2c" class="question-container" style="display: none;">
@@ -369,7 +477,69 @@
             </div>
         </div>
         
-        <!-- Add more branching paths for connection subtypes -->
+        <!-- Connection Path Branches -->
+        <div id="q3c1" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3c1', 'q2c')">← Back</button>
+            <h2>How do you nurture your digital relationships?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('digital-empath')">
+                    <h3>Deep engagement</h3>
+                    <p>I invest time in meaningful conversations and remember personal details</p>
+                </div>
+                <div class="option" onclick="calculateResult('consistent-connector')">
+                    <h3>Consistent presence</h3>
+                    <p>I maintain regular contact and show up reliably for my connections</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Connection-Protection Path -->
+        <div id="q3c2" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3c2', 'q2c')">← Back</button>
+            <h2>How do you manage privacy within your relationships?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('trusted-circle')">
+                    <h3>Close-knit network</h3>
+                    <p>I maintain a small group of trusted connections who respect boundaries</p>
+                </div>
+                <div class="option" onclick="calculateResult('boundary-setter')">
+                    <h3>Clear boundaries</h3>
+                    <p>I'm open to connections but set clear limits on what I share with whom</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Connection-Expression Path -->
+        <div id="q3c3" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3c3', 'q2c')">← Back</button>
+            <h2>How do you approach creative collaborations online?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('collaborative-creator')">
+                    <h3>Active collaboration</h3>
+                    <p>I seek out and initiate creative projects with others regularly</p>
+                </div>
+                <div class="option" onclick="calculateResult('inspiration-networker')">
+                    <h3>Inspiration exchange</h3>
+                    <p>I build networks where we inspire and support each other's individual work</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Connection-Exploration Path -->
+        <div id="q3c4" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3c4', 'q2c')">← Back</button>
+            <h2>How do you approach diverse perspectives in your connections?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('perspective-collector')">
+                    <h3>Active diversity seeking</h3>
+                    <p>I deliberately connect with people from different backgrounds than my own</p>
+                </div>
+                <div class="option" onclick="calculateResult('bridge-builder')">
+                    <h3>Community bridging</h3>
+                    <p>I connect different groups and help people understand different perspectives</p>
+                </div>
+            </div>
+        </div>
         
         <!-- Exploration Path Questions -->
         <div id="q2d" class="question-container" style="display: none;">
@@ -395,20 +565,66 @@
             </div>
         </div>
         
-        <!-- Add more branching paths for exploration subtypes -->
-        
-        <!-- Add placeholder code for additional branching questions -->
-        <div id="q3b1" class="question-container" style="display: none;">
-            <button class="back-button" onclick="goBack('q3b1', 'q2b')">← Back</button>
-            <h2>How important is audience feedback to your creative expression?</h2>
+        <!-- Exploration Path Branches -->
+        <div id="q3d1" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3d1', 'q2d')">← Back</button>
+            <h2>How do you approach trying new online identities?</h2>
             <div class="options">
-                <div class="option" onclick="calculateResult('artistic-chameleon')">
-                    <h3>I create for myself</h3>
-                    <p>Audience reaction is secondary to my personal creative satisfaction</p>
+                <div class="option" onclick="calculateResult('identity-explorer')">
+                    <h3>Complete reinvention</h3>
+                    <p>I create entirely different personas to experience different ways of being</p>
                 </div>
-                <div class="option" onclick="calculateResult('audience-aware-creator')">
-                    <h3>I value engagement</h3>
-                    <p>Feedback shapes my future creative directions and choices</p>
+                <div class="option" onclick="calculateResult('evolving-self')">
+                    <h3>Gradual evolution</h3>
+                    <p>I let my identity develop organically as I discover new facets of myself</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Exploration-Protection Path -->
+        <div id="q3d2" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3d2', 'q2d')">← Back</button>
+            <h2>How do you balance exploration with privacy concerns?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('masked-explorer')">
+                    <h3>Anonymous experimentation</h3>
+                    <p>I use anonymous accounts and privacy tools to explore freely</p>
+                </div>
+                <div class="option" onclick="calculateResult('calculated-risk-taker')">
+                    <h3>Calculated openness</h3>
+                    <p>I assess privacy risks before deciding how openly to explore each area</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Exploration-Expression Path -->
+        <div id="q3d3" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3d3', 'q2d')">← Back</button>
+            <h2>How do you incorporate new inspirations into your creative work?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('creative-absorber')">
+                    <h3>Immediate integration</h3>
+                    <p>I quickly incorporate new influences and experiment with them right away</p>
+                </div>
+                <div class="option" onclick="calculateResult('thoughtful-synthesizer')">
+                    <h3>Thoughtful synthesis</h3>
+                    <p>I collect diverse inspirations and carefully blend them into my unique style</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Exploration-Connection Path -->
+        <div id="q3d4" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3d4', 'q2d')">← Back</button>
+            <h2>How do you approach joining new communities?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('community-hopper')">
+                    <h3>Community sampling</h3>
+                    <p>I join many different groups to experience diverse perspectives</p>
+                </div>
+                <div class="option" onclick="calculateResult('community-diver')">
+                    <h3>Deep immersion</h3>
+                    <p>I selectively choose communities and dive deep into understanding them fully</p>
                 </div>
             </div>
         </div>
@@ -575,7 +791,390 @@
             <button class="reset-button" onclick="resetQuiz()">Try Again</button>
         </div>
         
-        <!-- Add more result screens for other personality types -->
+        <!-- Additional Results: Generic Template -->
+        <!-- Additional results for all the other personality types -->
+        <div id="selective-guardian-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🛡️👀</div>
+                <h2>Selective Guardian</h2>
+            </div>
+            
+            <div class="hybrid-result">
+                You're selective but not paranoid about your digital privacy. You understand the value of sharing with a trusted inner circle while keeping the rest of the digital world at arm's length.
+            </div>
+            
+            <div class="result-section">
+                <h3>Your digital behavior in a nutshell:</h3>
+                <ul>
+                    <li>You carefully curate who gets to see what aspects of your digital life</li>
+                    <li>You have a trusted inner circle for more personal sharing</li>
+                    <li>You regularly audit your privacy settings across platforms</li>
+                    <li>You're cautious but not closed off to new connections</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Your ideal Personal Digital Twin would:</h3>
+                <ul>
+                    <li>Maintain different privacy levels for different circles of connection</li>
+                    <li>Help you securely share personal content with trusted individuals</li>
+                    <li>Provide regular privacy check-ups and recommendations</li>
+                    <li>Balance meaningful sharing with strong boundaries</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Watch out for:</h3>
+                <ul>
+                    <li>Becoming too rigid in your privacy tiers and missing spontaneous connections</li>
+                    <li>Over-analyzing the risks of every digital interaction</li>
+                    <li>Trusting your inner circle without verifying their privacy practices</li>
+                    <li>Inconsistent boundaries that create confusion</li>
+                </ul>
+            </div>
+            
+            <div class="result-section">
+                <h3>Pro tips for your digital twin type:</h3>
+                <ul>
+                    <li>Regularly reassess who belongs in your trusted inner circle</li>
+                    <li>Create clear guidelines for what you share with whom</li>
+                    <li>Use secure messaging for truly sensitive conversations</li>
+                    <li>Practice occasional boundary expansion to avoid digital isolation</li>
+                </ul>
+            </div>
+            
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <!-- Generic template for remaining results -->
+        <div id="balanced-protector-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">⚖️🔒</div>
+                <h2>Balanced Protector</h2>
+            </div>
+            <div class="hybrid-result">
+                You take a balanced approach to digital privacy, adapting your strategy to each context. You're neither paranoid nor careless - just practical.
+            </div>
+            <div class="result-section">
+                <h3>Your digital behavior in a nutshell:</h3>
+                <ul>
+                    <li>You assess privacy needs based on context and platform</li>
+                    <li>You're open to connections but with clear boundaries</li>
+                    <li>You regularly review your digital presence</li>
+                    <li>You take a pragmatic approach to digital sharing</li>
+                </ul>
+            </div>
+            <div class="result-section">
+                <h3>Pro tips for your digital twin type:</h3>
+                <ul>
+                    <li>Develop clear criteria for your contextual privacy decisions</li>
+                    <li>Create a regular schedule for privacy reviews</li>
+                    <li>Be transparent about your boundaries with connections</li>
+                    <li>Learn from privacy mishaps without becoming overly cautious</li>
+                </ul>
+            </div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <!-- Default template for other personality types -->
+        <div id="strategic-guardian-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🛡️♟️</div>
+                <h2>Strategic Guardian</h2>
+            </div>
+            <div class="hybrid-result">
+                You take a strategic approach to digital privacy, separating different aspects of your life into distinct digital compartments.
+            </div>
+            <div class="result-section">
+                <h3>Your digital behavior in a nutshell:</h3>
+                <ul>
+                    <li>Your organizational skills extend to your digital identity management</li>
+                    <li>You maintain separate accounts for different purposes</li>
+                    <li>You think several steps ahead about potential privacy implications</li>
+                </ul>
+            </div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <!-- Template for additional personality types -->
+        <div id="practical-protector-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🔄🔒</div>
+                <h2>Practical Protector</h2>
+            </div>
+            <div class="hybrid-result">Default description for Practical Protector</div>
+            <div class="result-section">
+                <h3>Your digital behavior in a nutshell:</h3>
+                <ul>
+                    <li>You're practical about identity management</li>
+                    <li>You maintain consistent identities with careful privacy settings</li>
+                </ul>
+            </div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <!-- Templates for other personality types -->
+        <div id="social-filter-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🔍👥</div>
+                <h2>Social Filter</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="contextual-sharer-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🔄👥</div>
+                <h2>Contextual Sharer</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="rights-defender-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">©️⚔️</div>
+                <h2>Rights Defender</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="conscious-creator-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🎨🧠</div>
+                <h2>Conscious Creator</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="anonymous-explorer-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">🥷🔍</div>
+                <h2>Anonymous Explorer</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="cautious-learner-result" class="result protection-result">
+            <div class="result-header">
+                <div class="result-icon">📚🕵️</div>
+                <h2>Cautious Learner</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="audience-aware-creator-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">🎨👁️</div>
+                <h2>Audience-Aware Creator</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <!-- Placeholder result divs for all other personality types -->
+        <div id="community-creator-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">👥🎨</div>
+                <h2>Community Creator</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="authentic-influencer-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">💫👤</div>
+                <h2>Authentic Influencer</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="selective-artist-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">🎨⚖️</div>
+                <h2>Selective Artist</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="strategic-creator-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">🎨♟️</div>
+                <h2>Strategic Creator</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="creative-explorer-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">🎨🔍</div>
+                <h2>Creative Explorer</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="trend-adapter-result" class="result expression-result">
+            <div class="result-header">
+                <div class="result-icon">🎨📈</div>
+                <h2>Trend Adapter</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="digital-empath-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">❤️💻</div>
+                <h2>Digital Empath</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="consistent-connector-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">🔄🤝</div>
+                <h2>Consistent Connector</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="trusted-circle-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">👥🔒</div>
+                <h2>Trusted Circle</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="boundary-setter-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">🧱👤</div>
+                <h2>Boundary Setter</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="collaborative-creator-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">👥🎨</div>
+                <h2>Collaborative Creator</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="inspiration-networker-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">💡🌐</div>
+                <h2>Inspiration Networker</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="perspective-collector-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">👁️🌈</div>
+                <h2>Perspective Collector</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="bridge-builder-result" class="result connection-result">
+            <div class="result-header">
+                <div class="result-icon">🌉👥</div>
+                <h2>Bridge Builder</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="identity-explorer-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🔍👤</div>
+                <h2>Identity Explorer</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="evolving-self-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🔄👤</div>
+                <h2>Evolving Self</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="masked-explorer-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🎭🔍</div>
+                <h2>Masked Explorer</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="calculated-risk-taker-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">⚖️🎲</div>
+                <h2>Calculated Risk Taker</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="creative-absorber-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🧽🎨</div>
+                <h2>Creative Absorber</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="thoughtful-synthesizer-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🧠🔀</div>
+                <h2>Thoughtful Synthesizer</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="community-hopper-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🦘👥</div>
+                <h2>Community Hopper</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
+        
+        <div id="community-diver-result" class="result exploration-result">
+            <div class="result-header">
+                <div class="result-icon">🤿👥</div>
+                <h2>Community Diver</h2>
+            </div>
+            <div class="hybrid-result">Default description</div>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
+        </div>
     </div>
 
     <script>
@@ -646,7 +1245,31 @@
             }
             
             // Show the appropriate result
-            document.getElementById(resultType + '-result').style.display = 'block';
+            const resultElement = document.getElementById(resultType + '-result');
+            
+            // If the specific result doesn't exist, show a default based on primary type
+            if (resultElement) {
+                resultElement.style.display = 'block';
+            } else {
+                // Fallback to a generic result based on the primary type
+                console.log("Result not found: " + resultType + "-result, using fallback");
+                
+                // Extract the primary type from the result type
+                let primaryType = resultType.includes('-') ? 
+                    resultType.split('-')[0] : 
+                    userPath.primaryType;
+                
+                // Show a generic result for this primary type
+                if (primaryType === 'protection' || primaryType === 'digital' || primaryType === 'privacy') {
+                    document.getElementById('digital-fortress-result').style.display = 'block';
+                } else if (primaryType === 'expression' || primaryType === 'artistic' || primaryType === 'creative') {
+                    document.getElementById('artistic-chameleon-result').style.display = 'block';
+                } else if (primaryType === 'connection' || primaryType === 'social') {
+                    document.getElementById('digital-empath-result').style.display = 'block';
+                } else {
+                    document.getElementById('identity-explorer-result').style.display = 'block';
+                }
+            }
             
             // Set progress to complete
             document.getElementById('progress-bar').style.width = '100%';
@@ -689,3 +1312,4 @@
     </script>
 </body>
 </html>
+                    
