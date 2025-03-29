@@ -16,15 +16,21 @@
         
         h1 {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             color: #2d3748;
+            font-size: 28px;
+        }
+        
+        h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
         }
         
         .container {
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            padding: 30px;
+            padding: 25px;
         }
         
         .question-container {
@@ -118,6 +124,7 @@
             cursor: pointer;
             margin-top: 20px;
             transition: background-color 0.3s;
+            font-size: 16px;
         }
         
         .reset-button:hover {
@@ -134,6 +141,7 @@
             margin-top: 10px;
             margin-bottom: 20px;
             transition: background-color 0.3s;
+            font-size: 14px;
         }
         
         .back-button:hover {
@@ -142,7 +150,7 @@
         
         .progress-container {
             margin-bottom: 20px;
-            height: 10px;
+            height: 8px;
             background-color: #e2e8f0;
             border-radius: 5px;
             overflow: hidden;
@@ -155,8 +163,16 @@
             transition: width 0.3s ease;
         }
         
+        .question-count {
+            text-align: right;
+            font-size: 14px;
+            color: #6B7280;
+            margin-bottom: 10px;
+        }
+        
         ul {
             margin-top: 5px;
+            padding-left: 20px;
         }
         
         li {
@@ -172,31 +188,32 @@
 </head>
 <body>
     <div class="container">
-        <h1>What Kind of Digital Twin Would Suit Your Personality?</h1>
+        <h1>What's Your Digital Twin Personality?</h1>
         
         <div class="progress-container">
             <div id="progress-bar" class="progress-bar"></div>
         </div>
+        <div id="question-count" class="question-count">Question 1 of 5</div>
         
-        <!-- Question 1 -->
+        <!-- Question 1: Starting Point -->
         <div id="q1" class="question-container">
-            <h2>When you create profiles or avatars online, what's most important to you?</h2>
+            <h2>When you scroll through your social feeds, what catches your attention first?</h2>
             <div class="options">
                 <div class="option protection-focused" onclick="nextQuestion('q1', 'q2a', 'protection')">
-                    <h3>Security & Control</h3>
-                    <p>I want to keep my personal information private and maintain control over what others see.</p>
+                    <h3>Security & privacy issues</h3>
+                    <p>Articles about data breaches, privacy settings, or how to protect yourself online</p>
                 </div>
                 <div class="option expression-focused" onclick="nextQuestion('q1', 'q2b', 'expression')">
-                    <h3>Self-expression & Creativity</h3>
-                    <p>I want to express myself creatively and show different aspects of my personality.</p>
+                    <h3>Creative content</h3>
+                    <p>Art, photography, design, or other forms of visual and creative expression</p>
                 </div>
                 <div class="option connection-focused" onclick="nextQuestion('q1', 'q2c', 'connection')">
-                    <h3>Authentic Connections</h3>
-                    <p>I want to build genuine relationships and connect meaningfully with others.</p>
+                    <h3>Friends & relationships</h3>
+                    <p>Updates from people you know, comments, and personal stories</p>
                 </div>
                 <div class="option exploration-focused" onclick="nextQuestion('q1', 'q2d', 'exploration')">
-                    <h3>Exploration & Variety</h3>
-                    <p>I want to explore different identities and experience various perspectives.</p>
+                    <h3>New ideas & perspectives</h3>
+                    <p>Content that introduces you to different viewpoints, cultures, or experiences</p>
                 </div>
             </div>
         </div>
@@ -204,669 +221,370 @@
         <!-- Protection Path Questions -->
         <div id="q2a" class="question-container" style="display: none;">
             <button class="back-button" onclick="goBack('q2a', 'q1')">← Back</button>
-            <h2>How do you typically approach your privacy settings across platforms?</h2>
+            <h2>What's your biggest worry about your digital presence?</h2>
             <div class="options">
-                <div class="option protection-focused" onclick="nextQuestion('q2a', 'q3a', 'protection', 2)">
-                    <h3>Locked Down</h3>
-                    <p>I set everything to the most private settings and regularly audit permissions.</p>
+                <div class="option protection-focused" onclick="nextQuestion('q2a', 'q3a1', 'protection', 2)">
+                    <h3>Data exploitation</h3>
+                    <p>Companies collecting and profiting from my personal information</p>
                 </div>
-                <div class="option" onclick="nextQuestion('q2a', 'q3a', 'protection-connection', 2)">
-                    <h3>Selective Sharing</h3>
-                    <p>I carefully choose what to share with specific groups or individuals.</p>
+                <div class="option" onclick="nextQuestion('q2a', 'q3a2', 'protection-connection', 2)">
+                    <h3>Misinterpretation</h3>
+                    <p>People misunderstanding what I share or taking it out of context</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2a', 'q3a3', 'protection-expression', 2)">
+                    <h3>Creative control</h3>
+                    <p>Losing ownership or control over content I've created</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2a', 'q3a4', 'protection-exploration', 2)">
+                    <h3>Digital footprint</h3>
+                    <p>Past digital activities affecting my future opportunities</p>
                 </div>
             </div>
         </div>
         
-        <div id="q3a" class="question-container" style="display: none;">
-            <button class="back-button" onclick="goBack('q3a', 'q2a')">← Back</button>
-            <h2>When a platform asks for personal information, you usually:</h2>
+        <div id="q3a1" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3a1', 'q2a')">← Back</button>
+            <h2>How do you handle apps requesting access to your data?</h2>
             <div class="options">
-                <div class="option protection-focused" onclick="calculateResult('pure-protection')">
-                    <h3>Provide Minimal Information</h3>
-                    <p>I only share what's absolutely required, often using aliases or alternative information.</p>
+                <div class="option protection-focused" onclick="nextQuestion('q3a1', 'q4a1', 'pure-protection', 3)">
+                    <h3>Extreme caution</h3>
+                    <p>I deny most permissions and use privacy-focused alternatives whenever possible</p>
                 </div>
-                <div class="option" onclick="calculateResult('protection-exploration')">
-                    <h3>Create Separate Identities</h3>
-                    <p>I create different identities for different platforms to compartmentalize my digital presence.</p>
+                <div class="option" onclick="nextQuestion('q3a1', 'q4a2', 'calculated-protection', 3)">
+                    <h3>Calculated sharing</h3>
+                    <p>I research each app thoroughly and only grant necessary permissions</p>
                 </div>
             </div>
         </div>
+        
+        <div id="q4a1" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q4a1', 'q3a1')">← Back</button>
+            <h2>What would your ideal digital assistant prioritize?</h2>
+            <div class="options">
+                <div class="option protection-focused" onclick="nextQuestion('q4a1', 'q5a1', 'fortress-guardian', 4)">
+                    <h3>Data fortification</h3>
+                    <p>Encrypting everything and minimizing data collection entirely</p>
+                </div>
+                <div class="option protection-focused" onclick="nextQuestion('q4a1', 'q5a2', 'privacy-advocate', 4)">
+                    <h3>Privacy advocacy</h3>
+                    <p>Fighting for better privacy laws while helping me navigate existing systems</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="q5a1" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q5a1', 'q4a1')">← Back</button>
+            <h2>How do you feel about sharing personal victories online?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('digital-fortress')">
+                    <h3>Highly uncomfortable</h3>
+                    <p>I prefer to keep personal achievements completely private</p>
+                </div>
+                <div class="option" onclick="calculateResult('selective-guardian')">
+                    <h3>Selectively comfortable</h3>
+                    <p>I might share with a tiny, vetted group in a secure setting</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="q5a2" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q5a2', 'q4a1')">← Back</button>
+            <h2>How do you handle friend requests or connection invitations?</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('privacy-advocate')">
+                    <h3>Strict vetting</h3>
+                    <p>I thoroughly research and consider each connection before accepting</p>
+                </div>
+                <div class="option" onclick="calculateResult('balanced-protector')">
+                    <h3>Contextual approach</h3>
+                    <p>I accept connections in some contexts while maintaining privacy boundaries</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="q4a2" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q4a2', 'q3a1')">← Back</button>
+            <h2>When creating accounts on new platforms, you typically:</h2>
+            <div class="options">
+                <div class="option" onclick="calculateResult('strategic-guardian')">
+                    <h3>Create separate accounts</h3>
+                    <p>I use different email addresses and usernames for different purposes</p>
+                </div>
+                <div class="option" onclick="calculateResult('practical-protector')">
+                    <h3>Use consistent credentials</h3>
+                    <p>I maintain a consistent identity but carefully manage privacy settings</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Add more branching paths for protection subtypes -->
         
         <!-- Expression Path Questions -->
         <div id="q2b" class="question-container" style="display: none;">
             <button class="back-button" onclick="goBack('q2b', 'q1')">← Back</button>
-            <h2>How do you approach different platforms and communities?</h2>
+            <h2>How consistent is your self-presentation across platforms?</h2>
             <div class="options">
-                <div class="option expression-focused" onclick="nextQuestion('q2b', 'q3b', 'expression', 2)">
-                    <h3>Creative Customization</h3>
-                    <p>I create unique aesthetics and personas tailored to each platform or community.</p>
+                <div class="option expression-focused" onclick="nextQuestion('q2b', 'q3b1', 'expression', 2)">
+                    <h3>Completely different</h3>
+                    <p>Each platform shows a different facet of my creativity and personality</p>
                 </div>
-                <div class="option" onclick="nextQuestion('q2b', 'q3b', 'expression-connection', 2)">
-                    <h3>Consistent But Creative</h3>
-                    <p>I maintain a recognizable identity across platforms but express it creatively in each context.</p>
+                <div class="option" onclick="nextQuestion('q2b', 'q3b2', 'expression-connection', 2)">
+                    <h3>Consistently creative</h3>
+                    <p>I maintain a recognizable style but adapt it to different audiences</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2b', 'q3b3', 'expression-protection', 2)">
+                    <h3>Selectively creative</h3>
+                    <p>I express myself creatively in specific safe spaces while keeping a low profile elsewhere</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2b', 'q3b4', 'expression-exploration', 2)">
+                    <h3>Constantly evolving</h3>
+                    <p>My creative expression regularly changes as I explore new styles and ideas</p>
                 </div>
             </div>
         </div>
         
-        <div id="q3b" class="question-container" style="display: none;">
-            <button class="back-button" onclick="goBack('q3b', 'q2b')">← Back</button>
-            <h2>How important is audience reaction to your digital expression?</h2>
-            <div class="options">
-                <div class="option expression-focused" onclick="calculateResult('pure-expression')">
-                    <h3>It's About Self-Expression</h3>
-                    <p>I create for myself first; audience reaction is secondary to authentic expression.</p>
-                </div>
-                <div class="option" onclick="calculateResult('expression-exploration')">
-                    <h3>I Enjoy Experimentation</h3>
-                    <p>I like trying different approaches to see how people respond to various expressions of myself.</p>
-                </div>
-            </div>
-        </div>
+        <!-- Add more branching paths for expression subtypes -->
         
         <!-- Connection Path Questions -->
         <div id="q2c" class="question-container" style="display: none;">
             <button class="back-button" onclick="goBack('q2c', 'q1')">← Back</button>
-            <h2>How do you maintain relationships across digital platforms?</h2>
+            <h2>What aspects of online connections do you value most?</h2>
             <div class="options">
-                <div class="option connection-focused" onclick="nextQuestion('q2c', 'q3c', 'connection', 2)">
-                    <h3>Deep Engagement</h3>
-                    <p>I focus on meaningful interactions with a core group of connections across platforms.</p>
+                <div class="option connection-focused" onclick="nextQuestion('q2c', 'q3c1', 'connection', 2)">
+                    <h3>Depth of relationships</h3>
+                    <p>Meaningful, authentic conversations and lasting connections</p>
                 </div>
-                <div class="option" onclick="nextQuestion('q2c', 'q3c', 'connection-protection', 2)">
-                    <h3>Selective Engagement</h3>
-                    <p>I'm thoughtful about which relationships I maintain on which platforms for privacy and clarity.</p>
+                <div class="option" onclick="nextQuestion('q2c', 'q3c2', 'connection-protection', 2)">
+                    <h3>Trust and safety</h3>
+                    <p>Having a smaller circle of trusted connections with clear boundaries</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2c', 'q3c3', 'connection-expression', 2)">
+                    <h3>Creative collaboration</h3>
+                    <p>Finding people who inspire and enhance my creative expression</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2c', 'q3c4', 'connection-exploration', 2)">
+                    <h3>Diverse perspectives</h3>
+                    <p>Connecting with people from different backgrounds and life experiences</p>
                 </div>
             </div>
         </div>
         
-        <div id="q3c" class="question-container" style="display: none;">
-            <button class="back-button" onclick="goBack('q3c', 'q2c')">← Back</button>
-            <h2>How do you handle the boundary between your online and offline relationships?</h2>
-            <div class="options">
-                <div class="option connection-focused" onclick="calculateResult('pure-connection')">
-                    <h3>Integrated Approach</h3>
-                    <p>I see digital relationships as extensions of my offline connections and treat them similarly.</p>
-                </div>
-                <div class="option" onclick="calculateResult('connection-expression')">
-                    <h3>Context-Based Sharing</h3>
-                    <p>I share different aspects of myself with different groups based on our shared interests.</p>
-                </div>
-            </div>
-        </div>
+        <!-- Add more branching paths for connection subtypes -->
         
         <!-- Exploration Path Questions -->
         <div id="q2d" class="question-container" style="display: none;">
             <button class="back-button" onclick="goBack('q2d', 'q1')">← Back</button>
-            <h2>How frequently do you try new platforms or digital spaces?</h2>
+            <h2>What drives your digital exploration?</h2>
             <div class="options">
-                <div class="option exploration-focused" onclick="nextQuestion('q2d', 'q3d', 'exploration', 2)">
-                    <h3>Constant Explorer</h3>
-                    <p>I regularly seek out new platforms and communities to experience different digital cultures.</p>
+                <div class="option exploration-focused" onclick="nextQuestion('q2d', 'q3d1', 'exploration', 2)">
+                    <h3>Identity experimentation</h3>
+                    <p>Trying out different ways of being and presenting myself</p>
                 </div>
-                <div class="option" onclick="nextQuestion('q2d', 'q3d', 'exploration-expression', 2)">
-                    <h3>Curious Curator</h3>
-                    <p>I select platforms that allow me to explore specific interests or creative expressions.</p>
+                <div class="option" onclick="nextQuestion('q2d', 'q3d2', 'exploration-protection', 2)">
+                    <h3>Anonymous curiosity</h3>
+                    <p>Exploring new topics and communities while maintaining privacy</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2d', 'q3d3', 'exploration-expression', 2)">
+                    <h3>Creative inspiration</h3>
+                    <p>Finding new ideas and styles to incorporate into my creative work</p>
+                </div>
+                <div class="option" onclick="nextQuestion('q2d', 'q3d4', 'exploration-connection', 2)">
+                    <h3>Community discovery</h3>
+                    <p>Finding like-minded people and new social circles</p>
                 </div>
             </div>
         </div>
         
-        <div id="q3d" class="question-container" style="display: none;">
-            <button class="back-button" onclick="goBack('q3d', 'q2d')">← Back</button>
-            <h2>When you join a new community or platform, you typically:</h2>
+        <!-- Add more branching paths for exploration subtypes -->
+        
+        <!-- Add placeholder code for additional branching questions -->
+        <div id="q3b1" class="question-container" style="display: none;">
+            <button class="back-button" onclick="goBack('q3b1', 'q2b')">← Back</button>
+            <h2>How important is audience feedback to your creative expression?</h2>
             <div class="options">
-                <div class="option exploration-focused" onclick="calculateResult('pure-exploration')">
-                    <h3>Create a Fresh Identity</h3>
-                    <p>I enjoy crafting a new persona specific to that community's culture and norms.</p>
+                <div class="option" onclick="calculateResult('artistic-chameleon')">
+                    <h3>I create for myself</h3>
+                    <p>Audience reaction is secondary to my personal creative satisfaction</p>
                 </div>
-                <div class="option" onclick="calculateResult('exploration-connection')">
-                    <h3>Adapt While Connecting</h3>
-                    <p>I maintain core aspects of my identity while adapting to connect with new communities.</p>
+                <div class="option" onclick="calculateResult('audience-aware-creator')">
+                    <h3>I value engagement</h3>
+                    <p>Feedback shapes my future creative directions and choices</p>
                 </div>
             </div>
         </div>
         
-        <!-- Results - Pure Types -->
-        <div id="pure-protection-result" class="result protection-result">
+        <!-- Results: Digital Fortress -->
+        <div id="digital-fortress-result" class="result protection-result">
             <div class="result-header">
-                <div class="result-icon">🛡️</div>
-                <h2>Protection-Focused (Privacy Guardian)</h2>
-            </div>
-            
-            <div class="result-section">
-                <h3>Primary concern:</h3>
-                <p>Security and privacy</p>
-            </div>
-            
-            <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
-                <ul>
-                    <li>Minimal sharing of personal information</li>
-                    <li>Strong boundaries between platforms</li>
-                    <li>Regular privacy audits</li>
-                    <li>Selective digital presence</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
-                <ul>
-                    <li>Strong encryption and security protocols</li>
-                    <li>Minimal data collection and retention</li>
-                    <li>Automatic privacy settings optimization</li>
-                    <li>Digital footprint monitoring</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Risks to watch for:</h3>
-                <ul>
-                    <li>Digital isolation</li>
-                    <li>Missing opportunities for connection</li>
-                    <li>Overly restrictive self-presentation</li>
-                    <li>Security fatigue leading to lapses</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Create tiered privacy protocols allowing selective vulnerability</li>
-                    <li>Schedule regular "safe sharing" experiences</li>
-                    <li>Develop a privacy-first, not privacy-only approach</li>
-                    <li>Use privacy tools that don't compromise user experience</li>
-                </ul>
-            </div>
-            
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
-        </div>
-        
-        <div id="pure-expression-result" class="result expression-result">
-            <div class="result-header">
-                <div class="result-icon">🎨</div>
-                <h2>Expression-Focused (Creative Experimenter)</h2>
-            </div>
-            
-            <div class="result-section">
-                <h3>Primary concern:</h3>
-                <p>Self-expression and creativity</p>
-            </div>
-            
-            <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
-                <ul>
-                    <li>Frequent identity play and experimentation</li>
-                    <li>Artistic and varied sharing</li>
-                    <li>Platform-specific personas</li>
-                    <li>Curated aesthetic experiences</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
-                <ul>
-                    <li>Creative tools and filters</li>
-                    <li>Multiple representation options</li>
-                    <li>Cross-platform aesthetic consistency tools</li>
-                    <li>Content creation assistance</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Risks to watch for:</h3>
-                <ul>
-                    <li>Identity fragmentation across platforms</li>
-                    <li>Authenticity challenges</li>
-                    <li>Creative burnout from maintaining personas</li>
-                    <li>Lost sense of core identity</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Create integration rituals between different digital expressions</li>
-                    <li>Maintain a private archive of your digital evolution</li>
-                    <li>Schedule "authentic self" check-ins</li>
-                    <li>Develop a core aesthetic that threads through all expressions</li>
-                </ul>
-            </div>
-            
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
-        </div>
-        
-        <div id="pure-connection-result" class="result connection-result">
-            <div class="result-header">
-                <div class="result-icon">🤝</div>
-                <h2>Connection-Focused (Authentic Networker)</h2>
-            </div>
-            
-            <div class="result-section">
-                <h3>Primary concern:</h3>
-                <p>Building genuine relationships</p>
-            </div>
-            
-            <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
-                <ul>
-                    <li>Consistent identity across platforms</li>
-                    <li>Relationship-building focus</li>
-                    <li>Regular engagement with connections</li>
-                    <li>Authentic sharing</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
-                <ul>
-                    <li>Smart filtering for meaningful connections</li>
-                    <li>Consistency tools across platforms</li>
-                    <li>Engagement tracking and reminders</li>
-                    <li>Relationship management assistance</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Risks to watch for:</h3>
-                <ul>
-                    <li>Oversharing personal information</li>
-                    <li>Boundary issues with connections</li>
-                    <li>Digital relationship burnout</li>
-                    <li>Disappointment from online/offline mismatches</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Schedule regular digital boundaries assessment</li>
-                    <li>Create tiered sharing protocols for different relationships</li>
-                    <li>Practice intentional engagement rather than constant availability</li>
-                    <li>Balance digital and physical relationship nurturing</li>
-                </ul>
-            </div>
-            
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
-        </div>
-        
-        <div id="pure-exploration-result" class="result exploration-result">
-            <div class="result-header">
-                <div class="result-icon">🧭</div>
-                <h2>Exploration-Focused (Identity Tourist)</h2>
-            </div>
-            
-            <div class="result-section">
-                <h3>Primary concern:</h3>
-                <p>Experiencing different perspectives</p>
-            </div>
-            
-            <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
-                <ul>
-                    <li>Adopting varied personas for different contexts</li>
-                    <li>Frequent platform-jumping</li>
-                    <li>Interest-based community participation</li>
-                    <li>Role-playing and identity experimentation</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
-                <ul>
-                    <li>Identity management tools</li>
-                    <li>Containment boundaries between identities</li>
-                    <li>Interest profile synchronization</li>
-                    <li>Cultural and perspective-broadening suggestions</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Risks to watch for:</h3>
-                <ul>
-                    <li>Decision paralysis from too many options</li>
-                    <li>Losing sense of core self</li>
-                    <li>Credibility issues across contexts</li>
-                    <li>Difficulty maintaining meaningful connections</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Maintain a "home base" identity to return to</li>
-                    <li>Keep a private journal of identity explorations and insights</li>
-                    <li>Set clear purposes for each digital identity</li>
-                    <li>Create rituals for transitioning between digital personas</li>
-                </ul>
-            </div>
-            
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
-        </div>
-        
-        <!-- Hybrid Results -->
-        <div id="protection-connection-result" class="result protection-result">
-            <div class="result-header">
-                <div class="result-icon">🛡️🤝</div>
-                <h2>Hybrid: Protection-Connection</h2>
+                <div class="result-icon">🛡️🔒</div>
+                <h2>Digital Fortress Guardian</h2>
             </div>
             
             <div class="hybrid-result">
-                You blend privacy protection with relationship building, creating secure but meaningful connections.
+                You're the ultimate digital privacy champion! Your online presence is so secure even the NSA would need a search warrant and a lot of patience.
             </div>
             
             <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
+                <h3>Your digital behavior in a nutshell:</h3>
                 <ul>
-                    <li>Careful curation of audience for shared content</li>
-                    <li>Clear boundaries with close connections</li>
-                    <li>Selective authenticity in safe spaces</li>
-                    <li>Thoughtful digital presence</li>
+                    <li>You have more security measures than a spy movie villain's lair</li>
+                    <li>Your online accounts are more compartmentalized than a submarine</li>
+                    <li>You probably use a VPN to order pizza online</li>
+                    <li>Your passwords are longer than this quiz</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
+                <h3>Your ideal Personal Digital Twin would:</h3>
                 <ul>
-                    <li>Relationship-specific privacy controls</li>
-                    <li>Tiered sharing management</li>
-                    <li>Trusted network verification</li>
-                    <li>Security features with social functionality</li>
+                    <li>Automatically encrypt everything you touch online</li>
+                    <li>Run constant privacy audits like a paranoid accountant</li>
+                    <li>Have a built-in digital paper shredder for your digital footprints</li>
+                    <li>Predict privacy threats before they even exist</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Risks to watch for:</h3>
+                <h3>Watch out for:</h3>
                 <ul>
-                    <li>Overthinking social interactions</li>
-                    <li>Excessive vetting of new connections</li>
-                    <li>Difficulty balancing openness and caution</li>
-                    <li>Creating unintended distance through protection measures</li>
+                    <li>Digital isolation that would make a hermit feel social</li>
+                    <li>Missing beautiful connections because they don't have proper encryption</li>
+                    <li>Privacy fatigue that makes "just this once" exceptions too tempting</li>
+                    <li>Forgetting all your different usernames and passwords</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Recommendations:</h3>
+                <h3>Pro tips for your digital twin type:</h3>
                 <ul>
-                    <li>Develop clear criteria for relationship progression</li>
-                    <li>Create relationship circles with appropriate sharing levels</li>
-                    <li>Practice vulnerability in secure contexts</li>
-                    <li>Schedule regular relationship audits</li>
+                    <li>Schedule occasional "safe sharing" days when you let your guard down (just a little)</li>
+                    <li>Create tiered privacy protocols so you're not treating your grandma like a Russian hacker</li>
+                    <li>Use privacy tools that don't make your digital life feel like solving a Rubik's cube</li>
+                    <li>Remember that sometimes human connection is worth the privacy trade-off</li>
                 </ul>
             </div>
             
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
         </div>
         
-        <div id="protection-exploration-result" class="result protection-result">
+        <!-- Results: Privacy Advocate -->
+        <div id="privacy-advocate-result" class="result protection-result">
             <div class="result-header">
-                <div class="result-icon">🛡️🧭</div>
-                <h2>Hybrid: Protection-Exploration</h2>
+                <div class="result-icon">🛡️📢</div>
+                <h2>Privacy Advocate</h2>
             </div>
             
             <div class="hybrid-result">
-                You create secure boundaries while exploring different identities, practicing safe experimentation.
+                You're on a mission to protect not just yourself but everyone around you from digital surveillance! Your friends probably get regular unsolicited lectures about their weak passwords.
             </div>
             
             <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
+                <h3>Your digital behavior in a nutshell:</h3>
                 <ul>
-                    <li>Compartmentalized identities for different contexts</li>
-                    <li>Strategic anonymity in new spaces</li>
-                    <li>Privacy-conscious experimentation</li>
-                    <li>Calculated risk-taking</li>
+                    <li>You've read more privacy policies than most lawyers</li>
+                    <li>You can spot a data-harvesting scheme from a mile away</li>
+                    <li>Your browser has more privacy extensions than actual websites you visit</li>
+                    <li>You've probably written to your representative about digital privacy laws</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
+                <h3>Your ideal Personal Digital Twin would:</h3>
                 <ul>
-                    <li>Identity separation tools</li>
-                    <li>Cross-platform security monitoring</li>
-                    <li>Privacy-preserving exploration suggestions</li>
-                    <li>Secure identity management system</li>
+                    <li>Fight for better digital rights while protecting your data</li>
+                    <li>Automatically opt you out of all data collection schemes</li>
+                    <li>Provide educational resources to help others protect themselves</li>
+                    <li>Balance privacy with necessary functionality</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Risks to watch for:</h3>
+                <h3>Watch out for:</h3>
                 <ul>
-                    <li>Managing multiple secure identities becoming overwhelming</li>
-                    <li>Difficulty integrating valuable experiences across identities</li>
-                    <li>Missing connection opportunities due to excessive compartmentalization</li>
-                    <li>Security fatigue from managing multiple personas</li>
+                    <li>Alienating less privacy-conscious friends with your passionate warnings</li>
+                    <li>Decision fatigue from constant vigilance</li>
+                    <li>Missing out on genuinely useful services due to privacy concerns</li>
+                    <li>The occasional feelings of fighting a losing battle</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Recommendations:</h3>
+                <h3>Pro tips for your digital twin type:</h3>
                 <ul>
-                    <li>Create a secure system for tracking different identities</li>
-                    <li>Develop protocols for what information crosses identity boundaries</li>
-                    <li>Schedule regular security checks for all identities</li>
-                    <li>Consider private documentation of insights gained across identities</li>
+                    <li>Find a balance between privacy advocacy and practical digital living</li>
+                    <li>Create tiered approaches for different types of online activities</li>
+                    <li>Build a community of like-minded privacy advocates</li>
+                    <li>Focus on winnable battles rather than complete digital invisibility</li>
                 </ul>
             </div>
             
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
         </div>
         
-        <div id="expression-connection-result" class="result expression-result">
+        <!-- Results: Artistic Chameleon -->
+        <div id="artistic-chameleon-result" class="result expression-result">
             <div class="result-header">
-                <div class="result-icon">🎨🤝</div>
-                <h2>Hybrid: Expression-Connection</h2>
+                <div class="result-icon">🎨🦎</div>
+                <h2>Artistic Chameleon</h2>
             </div>
             
             <div class="hybrid-result">
-                You blend creative self-expression with relationship building, creating authentic connections through shared creativity.
+                You're a creative shape-shifter with more digital personalities than most people have pairs of socks! Each platform showcases a different slice of your kaleidoscopic self.
             </div>
             
             <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
+                <h3>Your digital behavior in a nutshell:</h3>
                 <ul>
-                    <li>Consistent but creative identity expression</li>
-                    <li>Using art and creativity to deepen connections</li>
-                    <li>Co-creation with digital connections</li>
-                    <li>Expressive vulnerability that invites relation</li>
+                    <li>Your Instagram aesthetic is completely different from your Twitter vibe</li>
+                    <li>You have multiple accounts on the same platform for different types of content</li>
+                    <li>Your online personas range from minimalist poet to technicolor maximalist</li>
+                    <li>You treat each platform like a different gallery for your creative expression</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
+                <h3>Your ideal Personal Digital Twin would:</h3>
                 <ul>
-                    <li>Creative collaboration tools</li>
-                    <li>Consistent personal branding assistance</li>
-                    <li>Relationship-building through shared interests</li>
-                    <li>Expression templates for different relationships</li>
+                    <li>Maintain separate creative personas across platforms without mixing them</li>
+                    <li>Suggest creative direction shifts based on platform-specific trends</li>
+                    <li>Track your creative evolution across different expressions</li>
+                    <li>Help you experiment with new creative styles and approaches</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Risks to watch for:</h3>
+                <h3>Watch out for:</h3>
                 <ul>
-                    <li>Potential disappointment when creative expression isn't reciprocated</li>
-                    <li>Feeling obligated to maintain creative output for connections</li>
-                    <li>Boundary issues between personal expression and relationship maintenance</li>
-                    <li>Creative burnout from social expectations</li>
+                    <li>Identity fragmentation that leaves you feeling scattered</li>
+                    <li>Exhaustion from maintaining multiple creative personas</li>
+                    <li>Appearing inconsistent or inauthentic to cross-platform connections</li>
+                    <li>Getting so caught up in persona maintenance that creation suffers</li>
                 </ul>
             </div>
             
             <div class="result-section">
-                <h3>Recommendations:</h3>
+                <h3>Pro tips for your digital twin type:</h3>
                 <ul>
-                    <li>Schedule both solo creative time and collaborative expression</li>
-                    <li>Develop clear boundaries around creative sharing</li>
-                    <li>Practice receiving various types of responses to creative expression</li>
-                    <li>Build communities around shared creative interests</li>
+                    <li>Keep a private archive documenting your creative journey across all platforms</li>
+                    <li>Identify subtle connecting threads between your different expressions</li>
+                    <li>Schedule check-ins with your "core self" to prevent fragmentation</li>
+                    <li>Consider selective cross-pollination between your creative personas</li>
                 </ul>
             </div>
             
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
+            <button class="reset-button" onclick="resetQuiz()">Try Again</button>
         </div>
         
-        <div id="expression-exploration-result" class="result expression-result">
-            <div class="result-header">
-                <div class="result-icon">🎨🧭</div>
-                <h2>Hybrid: Expression-Exploration</h2>
-            </div>
-            
-            <div class="hybrid-result">
-                You use creative expression as a vehicle for identity exploration, constantly evolving your digital presence.
-            </div>
-            
-            <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
-                <ul>
-                    <li>Experimental creative personas across platforms</li>
-                    <li>Frequent aesthetic evolution</li>
-                    <li>Testing different creative styles and approaches</li>
-                    <li>Using art to explore different aspects of identity</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
-                <ul>
-                    <li>Creative style exploration tools</li>
-                    <li>Digital art experimentation assistance</li>
-                    <li>Multi-platform creative synchronization</li>
-                    <li>Persona development suggestions</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Risks to watch for:</h3>
-                <ul>
-                    <li>Creative identity fragmentation</li>
-                    <li>Difficulty developing a recognizable personal style</li>
-                    <li>Getting lost in constant reinvention</li>
-                    <li>Challenges building a consistent audience</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Maintain a creative portfolio documenting your evolution</li>
-                    <li>Identify core elements that remain consistent across experimentations</li>
-                    <li>Set exploration boundaries to prevent complete fragmentation</li>
-                    <li>Create transition rituals between different creative personas</li>
-                </ul>
-            </div>
-            
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
-        </div>
-        
-        <div id="connection-exploration-result" class="result connection-result">
-            <div class="result-header">
-                <div class="result-icon">🤝🧭</div>
-                <h2>Hybrid: Connection-Exploration</h2>
-            </div>
-            
-            <div class="hybrid-result">
-                You build relationships across diverse communities, using connections to explore different perspectives and experiences.
-            </div>
-            
-            <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
-                <ul>
-                    <li>Building bridges across different communities</li>
-                    <li>Adapting relationship styles to different contexts</li>
-                    <li>Using connections to gain new perspectives</li>
-                    <li>Community-hopping while maintaining relationships</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
-                <ul>
-                    <li>Cross-community relationship management</li>
-                    <li>Cultural translation assistance</li>
-                    <li>Connection recommendation across diverse interests</li>
-                    <li>Context-appropriate communication suggestions</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Risks to watch for:</h3>
-                <ul>
-                    <li>Spreading yourself too thin across too many communities</li>
-                    <li>Difficulty maintaining depth in relationships</li>
-                    <li>Cultural misunderstandings when bridging communities</li>
-                    <li>Identity confusion from constant adaptation</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Create a relationship map across communities</li>
-                    <li>Practice cultural humility when exploring new groups</li>
-                    <li>Schedule focused connection time with core relationships</li>
-                    <li>Reflect on how different communities influence your identity</li>
-                </ul>
-            </div>
-            
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
-        </div>
-        
-        <div id="connection-protection-result" class="result connection-result">
-            <div class="result-header">
-                <div class="result-icon">🤝🛡️</div>
-                <h2>Hybrid: Connection-Protection</h2>
-            </div>
-            
-            <div class="hybrid-result">
-                You create deep connections within carefully protected boundaries, focusing on quality relationships over quantity.
-            </div>
-            
-            <div class="result-section">
-                <h3>Digital behavior patterns:</h3>
-                <ul>
-                    <li>Careful vetting of new connections</li>
-                    <li>Creating secure spaces for vulnerable sharing</li>
-                    <li>Clear relationship boundaries</li>
-                    <li>Progressive trust building</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Ideal Personal Digital Twin features:</h3>
-                <ul>
-                    <li>Trusted circle management</li>
-                    <li>Tiered relationship permissions</li>
-                    <li>Privacy-preserving sharing tools</li>
-                    <li>Relationship risk assessment</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Risks to watch for:</h3>
-                <ul>
-                    <li>Excessive caution limiting new connections</li>
-                    <li>Relationship progress stunted by privacy concerns</li>
-                    <li>Trust issues affecting digital connection quality</li>
-                    <li>Missing unexpected connection opportunities</li>
-                </ul>
-            </div>
-            
-            <div class="result-section">
-                <h3>Recommendations:</h3>
-                <ul>
-                    <li>Develop a progressive disclosure approach for new relationships</li>
-                    <li>Create safe but meaningful ways to connect initially</li>
-                    <li>Schedule regular relationship boundary reviews</li>
-                    <li>Practice measured vulnerability in trusted contexts</li>
-                </ul>
-            </div>
-            
-            <button class="reset-button" onclick="resetQuiz()">Start Over</button>
-        </div>
+        <!-- Add more result screens for other personality types -->
     </div>
 
     <script>
         let userPath = {
             primaryType: '',
             secondaryType: '',
-            progress: 0
+            progress: 0,
+            totalQuestions: 5,
+            currentQuestion: 1
         };
         
         function nextQuestion(currentId, nextId, type, progressValue = 1) {
@@ -885,7 +603,8 @@
             
             // Update progress
             userPath.progress += progressValue;
-            updateProgressBar();
+            userPath.currentQuestion++;
+            updateProgress();
             
             // Scroll to top of next question
             window.scrollTo(0, 0);
@@ -900,15 +619,17 @@
             
             // Update progress
             userPath.progress = Math.max(0, userPath.progress - 1);
-            updateProgressBar();
+            userPath.currentQuestion = Math.max(1, userPath.currentQuestion - 1);
+            updateProgress();
             
             // Scroll to top of previous question
             window.scrollTo(0, 0);
         }
         
-        function updateProgressBar() {
-            const progressPercent = (userPath.progress / 3) * 100;
+        function updateProgress() {
+            const progressPercent = (userPath.progress / userPath.totalQuestions) * 100;
             document.getElementById('progress-bar').style.width = progressPercent + '%';
+            document.getElementById('question-count').textContent = `Question ${userPath.currentQuestion} of ${userPath.totalQuestions}`;
         }
         
         function calculateResult(resultType) {
@@ -929,6 +650,7 @@
             
             // Set progress to complete
             document.getElementById('progress-bar').style.width = '100%';
+            document.getElementById('question-count').textContent = 'Your Results';
             
             // Scroll to top of result
             window.scrollTo(0, 0);
@@ -939,11 +661,14 @@
             userPath = {
                 primaryType: '',
                 secondaryType: '',
-                progress: 0
+                progress: 0,
+                totalQuestions: 5,
+                currentQuestion: 1
             };
             
             // Reset progress bar
             document.getElementById('progress-bar').style.width = '0%';
+            document.getElementById('question-count').textContent = `Question ${userPath.currentQuestion} of ${userPath.totalQuestions}`;
             
             // Hide all questions except the first
             const questions = document.getElementsByClassName('question-container');
